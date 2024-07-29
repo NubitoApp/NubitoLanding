@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nubito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Nubito - Control de Gastos e Ingresos</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#registro">Registro</a></li>
+            <li><a href="#resumen">Resumen</a></li>
+            <li><a href="#graficos">Gráficos</a></li>
+        </ul>
+    </nav>
+    <section id="registro">
+        <h2>Registro de Ingresos y Gastos</h2>
+        <form id="registro-form">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" name="categoria">
+                <option value="supermercado">Supermercado</option>
+                <option value="estudios">Estudios</option>
+                <option value="delivery">Delivery</option>
+                <option value="gym">Gym</option>
+                <option value="otros">Otros</option>
+            </select>
+            
+            <label for="monto">Monto:</label>
+            <input type="number" id="monto" name="monto" required>
+            
+            <button type="submit">Registrar</button>
+        </form>
+    </section>
+    <section id="resumen">
+        <h2>Resumen Mensual de Finanzas</h2>
+        <div id="resumen-contenido"></div>
+    </section>
+    <section id="graficos">
+        <h2>Visualización de Datos</h2>
+        <canvas id="grafico"></canvas>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
