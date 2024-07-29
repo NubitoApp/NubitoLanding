@@ -4,49 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nubito</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
-        <h1>Nubito - Control de Gastos e Ingresos</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Nubito</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resumen">Resumen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#graficos">Gráficos</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#registro">Registro</a></li>
-            <li><a href="#resumen">Resumen</a></li>
-            <li><a href="#graficos">Gráficos</a></li>
-        </ul>
-    </nav>
-    <section id="registro">
+
+    <section id="home" class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Bienvenido a Nubito</h1>
+            <p class="lead">Tu herramienta para controlar ingresos y gastos de manera eficiente.</p>
+            <a href="#registro" class="btn btn-primary btn-lg">Comenzar</a>
+        </div>
+    </section>
+
+    <section id="registro" class="container mt-5">
         <h2>Registro de Ingresos y Gastos</h2>
-        <form id="registro-form">
-            <label for="fecha">Fecha:</label>
-            <input type="date" id="fecha" name="fecha" required>
-            
-            <label for="categoria">Categoría:</label>
-            <select id="categoria" name="categoria">
-                <option value="supermercado">Supermercado</option>
-                <option value="estudios">Estudios</option>
-                <option value="delivery">Delivery</option>
-                <option value="gym">Gym</option>
-                <option value="otros">Otros</option>
-            </select>
-            
-            <label for="monto">Monto:</label>
-            <input type="number" id="monto" name="monto" required>
-            
-            <button type="submit">Registrar</button>
+        <form id="registro-form" class="form-inline">
+            <div class="form-group mb-2">
+                <label for="fecha" class="sr-only">Fecha</label>
+                <input type="date" id="fecha" class="form-control" required>
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="categoria" class="sr-only">Categoría</label>
+                <select id="categoria" class="form-control">
+                    <option value="supermercado">Supermercado</option>
+                    <option value="estudios">Estudios</option>
+                    <option value="delivery">Delivery</option>
+                    <option value="gym">Gym</option>
+                    <option value="otros">Otros</option>
+                </select>
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="monto" class="sr-only">Monto</label>
+                <input type="number" id="monto" class="form-control" placeholder="Monto" required>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Registrar</button>
         </form>
     </section>
-    <section id="resumen">
+
+    <section id="resumen" class="container mt-5">
         <h2>Resumen Mensual de Finanzas</h2>
         <div id="resumen-contenido"></div>
     </section>
-    <section id="graficos">
+
+    <section id="graficos" class="container mt-5">
         <h2>Visualización de Datos</h2>
         <canvas id="grafico"></canvas>
     </section>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 Nubito. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
